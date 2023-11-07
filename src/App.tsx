@@ -1,12 +1,13 @@
 import './App.css'
+import Popup from './components/Popup'
 
 function App() {
 
   return (
     <>
-      <div>
-      <div className="text-3xl font-bold underline lg:text-5xl">
-        Hello world!
+      <div className='w-300px h-300px'>
+      <div className=" font-bold underline">
+        <Popup/>
       </div>
       </div>
     </>

@@ -3,9 +3,9 @@
     "name": "Bard AI Text Generator",
     "version": "1.0",
     "description": "Generates text using Bard AI API based on the content of the current webpage and user input",
-    "permissions": ["activeTab"],
+    "permissions": ["activeTab", "background"],
     "action": {
-      "default_popup": "popup.html",
+      "default_popup": "index.html",
       "default_icon": {
        
       }
