@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Bard AI Text Generator",
+    "version": "1.0",
+    "description": "Generates text using Bard AI API based on the content of the current webpage and user input",
+    "permissions": ["activeTab"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+       
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": ["https://api.bard.com/"]
+  }
+  
