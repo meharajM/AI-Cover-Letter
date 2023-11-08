@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className='w-300px h-300px'>
-      <div className=" font-bold underline">
+      <div>
         <Popup/>
       </div>
       </div>
