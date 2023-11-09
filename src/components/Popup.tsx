@@ -23,13 +23,15 @@ const Popup = () => {
   }
 
   return (
-    <div className='w-300px p-4 bg-white shadow rounded'>
-      {loader && <div className='text-blue-500'>loading...</div>}
-      
+    <div className='w-300px p-4 bg-white shadow rounded relative'>
+      {loader && 
+        <div className='absolute top-0 left-0 w-full h-full bg-gray-500 bg-opacity-50 flex items-center justify-center'>
+          <div className='loader text-lg'>Generating cover letter...</div>
+        </div>
+      }
       <textarea className='w-full p-2 border rounded' onChange={(e) => setResume(e.target.value)} placeholder="Paste resume here" /> {/* text area for resume */}
       <button className='w-full p-2 mt-2 bg-blue-500 text-white rounded' onClick={clickHandler}>Generate cover letter</button>
       {content && <div className='mt-2'>
-        
         <div className='h-40 overflow-auto mt-2 p-2 border rounded text-black'>{content}</div>
         <button className='w-full p-2 mt-2 bg-green-500 text-white rounded' onClick={onCopy}>Copy</button>
         </div>}
