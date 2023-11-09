@@ -1,18 +1,19 @@
 // chrome.runtime.onInstalled.addListener(() => {
-//     chrome.storage.local.set({randomKey: ''})
+//     chrome.storage.local.set({randomKey: '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'})
 // });
 
 chrome.runtime.onStartup.addListener(function() {
+    console.log("welcome");
     chrome.cookies.getAll({ url: 'https://www.careered.ai/tool/cover-letter' }, function(cookies) {
-        for(let cookie of cookies) {
-            chrome.storage.local.set({cookie: cookie.value})
-        }
+        console.log("coooookies",cookies)
+            chrome.storage.local.set({cookies: cookies})
     });
   });
   
 
 function getCoverletter(jobDescription, info, callback) {
-    chrome.storage.local.get(['cookie'], function(result) {
+    chrome.storage.local.get(['cookies'], function(result) {
+        console.log("result", result)
         fetch('https://www.careered.ai/api/v1/chat', {
         method: 'POST',
         headers: {
@@ -21,7 +22,7 @@ function getCoverletter(jobDescription, info, callback) {
             'accept-language': 'en-IN,en;q=0.6',
             'cache-control': 'no-cache',
             'content-type': 'application/json',
-            'cookie': result,
+            'cookie': "xcbfbvcbvc",
             'origin': 'https://www.careered.ai',
             'pragma': 'no-cache',
             'referer': 'https://www.careered.ai/tool/cover-letter',

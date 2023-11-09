@@ -3,8 +3,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     if(message.action === "readPageContent"){
         const pageContent = document.body.innerText;
-        const prompt = `suggest me a cover letter for this job \n ${pageContent}`
-        chrome.runtime.sendMessage({action: 'getCoverletter', jd: prompt, info: pageContent}, (response) => {
+       
+        chrome.runtime.sendMessage({action: 'getCoverletter', jd: pageContent, info: message.resume}, (response) => {
             console.log("inside readPageContent listenr", sendResponse)
             sendResponse(response);
         })

@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Bard AI Text Generator",
+    "name": "Cover letter Generator",
     "version": "1.0",
-    "description": "Generates text using Bard AI API based on the content of the current webpage and user input",
+    "description": "Generates cover letter using AI",
     "permissions": ["activeTab", "background", "storage", "cookies"],
     "host_permissions": ["https://www.careered.ai/tool/cover-letter"],
     "action": {
