@@ -48,9 +48,12 @@ function getCoverletter(jobDescription, info, callback) {
             return response.text()
         })
         .then(data => {
-            callback(data)
+            callback({data})
         })
-        .catch(function (error) { console.log('Error:', error)});
+        .catch(function (error) { 
+            console.log('Error:', error)
+            callback({error})
+        });
 
     })
 }
